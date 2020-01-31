@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import {TableComponent} from "./Components/TableComponent";
+import {GitDataContainerComponent} from "./Components/GitDataContainer/GitDataContainerComponent";
 
 const App = () => {
   return (
     <div className="App">
-        <div className="git-table">
-            <TableComponent repoData={[{id: '1', owner: 'dsd', repoTitle:'sdsds', stars:'5', timeStamp:'3232'}]}/>
-        </div>
+        <GitDataContainerComponent/>
     </div>
   );
 };

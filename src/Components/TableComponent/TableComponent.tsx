@@ -20,10 +20,10 @@ export const TableComponent = (props: {repoData: RepositoryDataModel[]}) => {
                     {props.repoData.map(row => (
                         <TableRow key={row.id}>
                             <TableCell>{row.id}</TableCell>
-                            <TableCell>{row.repoTitle}</TableCell>
-                            <TableCell>{row.owner}</TableCell>
-                            <TableCell>{row.stars}</TableCell>
-                            <TableCell>{row.timeStamp}</TableCell>
+                            <TableCell>{row.name}</TableCell>
+                            <TableCell>{row.owner.login}</TableCell>
+                            <TableCell>{row.stargazers_count}</TableCell>
+                            <TableCell>{row.created_at}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
