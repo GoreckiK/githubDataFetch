@@ -23,7 +23,7 @@ export const TableComponent = (props: {repoData: RepositoryDataModel[]}) => {
                             <TableCell>{row.name}</TableCell>
                             <TableCell>{row.owner.login}</TableCell>
                             <TableCell>{row.stargazers_count}</TableCell>
-                            <TableCell>{row.created_at}</TableCell>
+                            <TableCell>{row.created_at.slice(0, 10)}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
