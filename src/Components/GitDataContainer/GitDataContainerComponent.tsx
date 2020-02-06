@@ -29,15 +29,19 @@ export class GitDataContainerComponent extends React.Component<{}, {gitHubData: 
         e.preventDefault();
     };
 
+    addLoginToItems = (data: any[]) => {
+        return [...data].map(item => ({...item, ownerName: item.owner.login}));
+    }
+
     onChange = (value: string): void => {
         if (value && !localStorage.getItem(value)) {
             getRepositoriesByName(value)
                 .then(res => {
                     // @ts-ignore
-                    localStorage.setItem(value, JSON.stringify(res.data.items));
+                    localStorage.setItem(value, JSON.stringify(this.addLoginToItems(res.data.items)));
                     localStorage.setItem('latestSearch', value);
                     this.setState({
-                        gitHubData: res.data.items,
+                        gitHubData: this.addLoginToItems(res.data.items),
                         latestSearch: value
                     });
                 })
