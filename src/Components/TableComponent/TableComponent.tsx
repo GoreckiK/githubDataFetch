@@ -82,7 +82,7 @@ export const TableComponent = (props: {repoData: RepositoryDataModel[]}) => {
     };
     
     return (
-        <div>
+        <div className="table-component">
             <table className='table'>
                 <thead>
                     <tr>
